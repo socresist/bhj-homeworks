@@ -8,23 +8,23 @@ for (let i = 1; i < 10; i++) {
     hole.onclick = function() {
 
        if (hole.className.includes('hole_has-mole')) {
-         dead.textContent ++;
+         dead.textContent++;
        } else {
-          lost.textContent ++;
-          }
+          lost.textContent++;
+       }
 
        if (dead.textContent === "5") {
-          message ("You have win!")
-          }
+         message("You have win!")
+       }
 
        if (lost.textContent === "10") {
-          message ("You have lost!")
-          }
-       } 
+          message("You have lost!")
+       }
+    } 
     
     function message (text) {
-       alert(text);
-       dead.textContent = 0;
-       lost.textContent = 0;
+      alert(text);
+      dead.textContent = 0;
+      lost.textContent = 0;
     }
  }
