@@ -5,7 +5,9 @@ newTooltip = document.createElement('div');
 newTooltip.className = 'tooltip';
 
 hasTooltip.forEach((elem) => {
-
+  let coordinates = elem.getBoundingClientRect();
+  let left = coordinates.left;
+  let top = coordinates.top - newTooltip.offsetHeight + 20;
   elem.addEventListener('click', stop, false);
 
   function stop(event) {
@@ -21,6 +23,9 @@ hasTooltip.forEach((elem) => {
       event.preventDefault();
 
       elem.insertAdjacentElement("beforebegin", newTooltip);
+    
+    newTooltip.style.left = left + 'px';
+        newTooltip.style.top = top + 'px';
 
       console.log(newTooltip)
 
